@@ -8,16 +8,17 @@ const app = express()
 const middleware = cors()
 
 app.use(middleware)
+app.use(router)
 
 const port = process.env.PORT || 5000
 
-app.get("/test", (req, res) => {
+router.get("/test", (req, res) => {
     res.send({
         message: 'Hello World'
     })
 })
 
-app.get("/test2", (req, res) => {
+router.get("/test2", (req, res) => {
     res.send({
         message: 'Hello World'
     })
