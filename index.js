@@ -1,5 +1,7 @@
 const express = require('express')
 const cors = require('cors')
+const {Router} = express
+const router = new Router()
 
 const app = express()
 
@@ -7,7 +9,7 @@ const middleware = cors()
 
 app.use(middleware)
 
-const port = 5000
+const port = process.env.PORT || 5000
 
 app.get("/test", (req, res) => {
     res.send({
